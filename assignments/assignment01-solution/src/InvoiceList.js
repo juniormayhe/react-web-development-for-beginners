@@ -34,20 +34,27 @@ const InvoiceList = () => {
   ]);
 
   const handleSendClick = (invoice) => {
-    // TODO: Add your code here
+    setOpenModal(true);
+    setSelectedInvoice(invoice);
   };
 
   const handleConfirmSend = () => {
-    // TODO: Add your code here
+    // Mark the invoice as sent
+    const updatedInvoices = invoices.map((inv) =>
+      inv.id === selectedInvoice.id ? { ...inv, sent: true } : inv
+    );
+    setInvoices(updatedInvoices);
 
+    setSnackbarOpen(true);
+    setOpenModal(false);
   };
 
   const handleCloseModal = () => {
-    // TODO: Add your code here
+    setOpenModal(false);
   };
 
   const handleCloseSnackbar = () => {
-    // TODO: Add your code here
+    setSnackbarOpen(false);
   };
 
   return (

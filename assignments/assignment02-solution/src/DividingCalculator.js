@@ -21,7 +21,8 @@ const DividingCalculator = () => {
       );
     }
 
-    // Add your division logic here
+    const quotient = parseFloat(numeratorValue) / parseFloat(denominatorValue);
+    return quotient.toFixed(2);
   };
 
   useEffect(() => {
